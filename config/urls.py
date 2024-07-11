@@ -24,4 +24,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("api/books/", view=views.BookListCreateAPIView.as_view()),
+    path(
+        "api/books/<uuid:uuid>/",
+        view=views.BookRetrieveUpdateDestroyAPIView.as_view(),
+    ),
 ]
